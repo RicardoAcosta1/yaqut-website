@@ -1,0 +1,101 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 1rem;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.20);
+}
+
+.footer {
+  background-color: #ccc;
+  padding: 1rem;
+  text-align: center;
+}
+
+.section-1 {
+}
+
+.background-section {
+  background-image: url('/assets/background.jpg');
+  background-size: cover; // Ensures the image covers the entire div
+  background-position: center; // Centers the image
+  background-repeat: no-repeat; // Prevents the image from repeating
+  height: 400px; // Adjust height as needed
+  position: relative; // Allows absolute positioning of the text overlay
+  display: flex;
+  align-items: center; // Vertically center the text
+  justify-content: center; // Horizontally center the text
+}
+
+.text-overlay {
+  color: white; // Text color for readability against the background
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  // Optional: Add a semi-transparent background for better contrast
+  background-color: rgba(255, 100, 100, 0.5); // Black overlay with 50% opacity
+  border-radius: 8px; // Optional: Rounded corners for the overlay
+}
+
+.footer {
+  align-items: center;
+  display: flex;
+  justify-content:center;
+  height: 4em;
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 -4px 6px -2px rgba(0, 0, 0, 0.20);
+}
+
+@for $weight from 100 through 900 {
+  @if ($weight % 100==0) {
+    .roboto-#{$weight} {
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: $weight;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+    }
+  }
+}
+
+.custom-button {
+  margin-top: 3em;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card {
+  border-radius: 16px;
+  background-color: rgb(255, 255, 255, 0.25);
+  padding: 2.5em;
+}
+
+@for $weight from 400 through 700 {
+  @if ($weight % 100==0) {
+    .caveat-#{$weight} {
+      font-family: "Caveat", cursive;
+      font-optical-sizing: auto;
+      font-weight: $weight;
+      font-style: normal;
+    }
+  }
+}
