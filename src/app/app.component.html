@@ -168,6 +168,47 @@
           </div>
         </div>
       </div>
+
+      <hr>
+
+      <div style="padding-top: 1em;padding-bottom: 4em;" class="section-5" id="comments">
+        <!-- <div class="caveat-700"
+          style="text-align: center; font-size: 3em; padding-top: 1em; padding-bottom: 1em; color: black">
+          {{ 'REACTIONS' | translate }}
+        </div>
+        <div class="roboto-300"
+          style="padding: 2em; text-align:justify; font-size: 1.25em;white-space: pre-line;padding-left: 10em; padding-right: 10em;">
+          {{ 'REACTIONS_TEXT' | translate }}
+        </div> -->
+        <div class="comment-section">
+          <!-- Add Comment -->
+          <textarea [(ngModel)]="newComment" maxlength="500" placeholder="Write your comment here..."
+            class="comment-section__textarea"></textarea>
+          <button (click)="postComment()" class="comment-section__button" [disabled]="!newComment.trim()">
+            Post
+          </button>
+          <div class="comment-section__char-count">{{ newComment.length }}/500</div>
+
+          <!-- Total Comments -->
+          <p class="comment-section__total-comments">
+            Total comments: {{ comments.length }}
+          </p>
+
+          <!-- Comment List -->
+          <div class="comment-section__comments-list">
+            <div *ngFor="let comment of comments" class="comment-section__comment">
+              <p>{{ comment.text }}</p>
+              <small>
+                👍 {{ comment.likes }} | 👎 {{ comment.dislikes }} | {{ comment.timestamp | date:'medium' }}
+              </small>
+            </div>
+          </div>
+
+          <!-- Visit Count -->
+          <p class="comment-section__visit-count">Total visitors: {{ visitCount }}</p>
+        </div>
+
+      </div>
     </div>
   </div>
   <div class="footer">
